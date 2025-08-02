@@ -57,20 +57,20 @@ Welcome to a robust, reproducible, and collaborative machine learning pipeline! 
 # Preprocessing Stage
 dvc stage add -n preprocess \
         -p preprocess.input,preprocess.output \
-        -d src/preprocess.py -d data/raw/data.csv \
-        -o data/processed/data.csv \
+        -d src/preprocess.py -d Data/raw/data.csv \
+        -o Data/processed/data.csv \
         python src/preprocess.py
 
 # Training Stage
 dvc stage add -n train \
         -p train.data,train.model,train.random_state,train.n_estimators,train.max_depth \
-        -d src/train.py -d data/raw/data.csv \
+        -d src/train.py -d Data/raw/data.csv \
         -o models/model.pkl \
         python src/train.py
 
 # Evaluation Stage
 dvc stage add -n evaluate \
-        -d src/evaluate.py -d models/model.pkl -d data/raw/data.csv \
+        -d src/evaluate.py -d models/model.pkl -d Data/processed/data.csv \
         python src/evaluate.py
 ```
 

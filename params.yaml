@@ -1,0 +1,13 @@
+preprocess:
+  input: data/raw/data.csv        # Where raw data is located
+  output: data/processed/data.csv # Where processed data will be saved
+
+train:
+  data: data/processed/data.csv         # Training data source
+  model: models/model.pkl         # Where to save trained model
+  random_state: 42               # For reproducible results
+  hyperparameter_grid:
+    n_estimators: [100, 200]
+    max_depth: [5, 10, null]
+    min_samples_split: [2, 5]
+    min_samples_leaf: [1, 2]                # Random Forest parameter

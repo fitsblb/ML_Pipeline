@@ -1,0 +1,27 @@
+stages:
+  preprocess:
+    cmd: python src/preprocess.py
+    deps:
+    - Data/raw/data.csv
+    - src/preprocess.py
+    params:
+    - preprocess.input
+    - preprocess.output
+    outs:
+    - Data/processed/data.csv
+  train:
+    cmd: python src/train.py
+    deps:
+    - Data/processed/data.csv
+    - src/train.py
+    params:
+    - train.hyperparameter_grid
+    - train.random_state
+    outs:
+    - models/model.pkl
+  evaluate:
+    cmd: python src/evaluate.py
+    deps:
+    - Data/processed/data.csv
+    - models/model.pkl
+    - src/evaluate.py
