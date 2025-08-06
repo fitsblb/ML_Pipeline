@@ -1,35 +1,121 @@
-# 🚀 Reproducible Machine Learning Pipeline
+# 🚀 Reproducible Machine Learning Pipeline with Real-Time Serving
 
-**Solving the reproducibility crisis in machine learning through modern MLOps practices**
+## 🎯 Project Overview
 
----
+**Solving the ML Reproducibility Crisis**
 
-## 🎯 The Problem
+Built to explore and solve real ML engineering challenges. This project demonstrates how modern MLOps tools can transform chaotic ML workflows into professional, reproducible systems with production-ready model serving.
 
-Machine learning projects often suffer from the "it works on my machine" syndrome. Data scientists struggle with:
+**Problem Solved:** *"It works on my machine"* → *"It works everywhere, reliably"*
 
-- **Irreproducible experiments** - Can't recreate results from last month
-- **Data versioning chaos** - Which dataset version produced the best model?
-- **Model tracking nightmares** - Lost track of hyperparameters that worked
-- **Collaboration friction** - Team members can't reproduce each other's work
-- **Deployment uncertainty** - Production models don't match development results
-
-## 💡 The Solution
-
-This project demonstrates how to build a **fully reproducible ML pipeline** that solves these core challenges using modern MLOps tools. With a single command (`dvc repro`), anyone can reproduce the entire workflow from raw data to final model evaluation.
+**Tools**: DVC, MLflow, DagHub, Docker, Flask, Scikit-learn  
+**Dataset**: Pima Indians Diabetes Database
 
 ## 🏗️ Architecture
 
 ```
-📊 Raw Data (DVC tracked)
-       ↓
-🔄 Data Preprocessing 
-       ↓
-📈 Model Training (with hyperparameter tuning)
-       ↓
-🎯 Model Evaluation
-       ↓
-📋 Results & Metrics (MLflow tracked)
+---
+
+## 🏗️ Architecture Overview
+
+```
+> ![alt text](img/architecture.png)
+```
+
+
+**Complete MLOps workflow from raw data to production-ready API endpoint.**
+
+---
+
+## 📁 Project Structure
+
+```
+> ![alt text](<img/Project structure.png>)
+
+```
+
+---
+
+## � Quick Start
+
+### **Prerequisites**
+- Docker installed
+- Git repository access
+- Python 3.10+ (for local development)
+
+### **1. Clone and Setup**
+```bash
+git clone https://github.com/fitsblb/ML_Pipeline.git
+cd ML_Pipeline
+
+# Create environment file
+echo "MLFLOW_TRACKING_URI=https://dagshub.com/fitsblb/ML_Pipeline.mlflow" > .env
+echo "MLFLOW_TRACKING_USERNAME=your_username" >> .env
+echo "MLFLOW_TRACKING_PASSWORD=your_token" >> .env
+```
+
+### **2. Run Complete Pipeline**
+```bash
+# Build and run the ML pipeline
+docker build -t ml-pipeline .
+docker run --rm -v %cd%:/app --env-file .env ml-pipeline
+```
+
+### **3. Deploy Model Server**
+```bash
+# Build serving container
+docker build -t model-server -f serve/Dockerfile .
+
+# Launch API server with live dashboard
+docker run -p 8000:8000 model-server
+```
+
+### **4. Access Live Dashboard**
+Open browser: **http://localhost:8000**
+
+>![alt text](img/host_output.png)
+
+---
+
+## 🧪 Testing the API
+
+### **Health Check**
+```bash
+curl http://localhost:8000
+# Response: "Model is ready to predict!"
+```
+
+### **Single Prediction**
+```bash
+curl -X POST http://localhost:8000/predict 
+     -H "Content-Type: application/json" 
+     -d '{
+       "Pregnancies": 6,
+       "Glucose": 148,
+       "BloodPressure": 72,
+       "SkinThickness": 35,
+       "Insulin": 0,
+       "BMI": 33.6,
+       "DiabetesPedigreeFunction": 0.627,
+       "Age": 50
+     }'
+```
+
+**Response:**
+```json
+{"prediction": [1]}  // 1 = Diabetes Risk, 0 = No Diabetes
+```
+
+
+
+### **Multiple Test Cases**
+```bash
+# Run comprehensive testing
+python tests/test_multiple.py
+```
+
+>![alt text](img/terminal_output.png)
+
 ```
 
 ## 🛠️ Technical Stack
