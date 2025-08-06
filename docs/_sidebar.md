@@ -1,0 +1,15 @@
+<!-- _sidebar.md -->
+
+* [🏠 Home](/)
+* [🏗️ Architecture](/#-architecture-overview)
+* [📁 Project Structure](/#-project-structure)
+* [🚀 Quick Start](/#-quick-start)
+* [🧪 Testing the API](/#-testing-the-api)
+* [🛠️ Technical Stack](/#-technical-stack)
+* [✨ Key Features](/#-key-features)
+* [🔄 Pipeline Stages](/#-pipeline-stages)
+* [📊 Results](/#-results)
+* [🔧 Experimentation](/#-experimentation)
+* [🎓 Key Learnings](/#-key-learnings)
+* [🛡️ Production Considerations](/#-production-considerations)
+* [🔮 Future Enhancements](/#-future-enhancements)

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ML Pipeline - End-to-End MLOps Solution</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="End-to-End MLOps Pipeline with DVC, MLflow, Docker, and Flask">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/dark.css">
+  <style>
+    :root {
+      --theme-color: #5468ff;
+      --theme-color-dark: #4354cc;
+    }
+    
+    /* Vibrant sidebar */
+    .sidebar {
+      padding: 1.5rem;
+      background: linear-gradient(to bottom, #1a1a2e, #16213e);
+      color: #eaeaea;
+      border-right: 1px solid #3a3a5a;
+    }
+    
+    .sidebar ul li.active>a {
+      color: #7b68ee;
+      font-weight: 700;
+      text-shadow: 0 0 5px rgba(123, 104, 238, 0.3);
+    }
+    
+    .sidebar ul li a:hover {
+      color: #a193f0;
+      text-decoration: none;
+    }
+    
+    /* Main content area */
+    .markdown-section {
+      max-width: 900px;
+      padding: 2rem;
+      background-color: #1a1a2e;
+    }
+    
+    /* Headings */
+    .markdown-section h1 {
+      color: #5468ff;
+      border-bottom: 1px solid #5468ff;
+      padding-bottom: 0.5rem;
+    }
+    
+    .markdown-section h2 {
+      color: #4d9de0;
+      border-left: 4px solid #4d9de0;
+      padding-left: 12px;
+    }
+    
+    .markdown-section h3 {
+      color: #7678ed;
+    }
+    
+    /* Code blocks */
+    .markdown-section code {
+      color: #ffcc5c;
+    }
+    
+    .markdown-section pre {
+      background-color: #161b22;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    
+    /* Tables */
+    .markdown-section table {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+    
+    .markdown-section tr:nth-child(2n) {
+      background-color: #1e2433;
+    }
+    
+    /* Block quotes */
+    .markdown-section blockquote {
+      border-left: 4px solid #5468ff;
+      background-color: rgba(84, 104, 255, 0.1);
+    }
+    
+    /* Links */
+    .markdown-section a {
+      color: #5468ff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+    
+    .markdown-section a:hover {
+      color: #7b68ee;
+      text-decoration: underline;
+    }
+    
+    /* Emoji and icons */
+    .emoji {
+      font-size: 1.3em;
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+      name: '🚀 ML Pipeline',
+      nameLink: '/',
+      repo: 'https://github.com/fitsblb/ML_Pipeline',
+      auto2top: true,
+      loadSidebar: true,
+      subMaxLevel: 3,
+      
+      // Better navigation
+      maxLevel: 4,
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md'
+      },
+      
+      // Progress indicator
+      progress: {
+        position: "top",
+        color: "#5468ff",
+        height: "3px"
+      },
+      
+      // Search configuration
+      search: {
+        paths: 'auto',
+        placeholder: '🔍 Search Documentation',
+        noData: 'No results found!',
+        depth: 6,
+        hideOtherSidebarContent: false,
+        namespace: 'ml-pipeline'
+      },
+      
+      // Pagination
+      pagination: {
+        previousText: '⬅️ Previous',
+        nextText: 'Next ➡️',
+        crossChapter: true,
+        crossChapterText: true
+      },
+      
+      // Tabs configuration
+      tabs: {
+        persist: true,
+        sync: true,
+        theme: 'material',
+        tabComments: true,
+        tabHeadings: true
+      }
+    }
+  </script>
+  <!-- Docsify v4 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  
+  <!-- Core Plugins -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  
+  <!-- Syntax Highlighting -->
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-bash.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-yaml.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-json.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-docker.min.js"></script>
+  
+  <!-- Additional Plugins -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-themeable@0"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-progress@1.0.1/dist/progress.min.js"></script>
+</body>
+</html>
