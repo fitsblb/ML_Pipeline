@@ -211,7 +211,7 @@ git
 
 ### 1. Clone & Setup
 ```bash
-git clone <your-repo-url>
+git clone https://dagshub.com/fitsblb/ML_Pipeline
 cd ML_Pipeline
 pip install -r requirements.txt
 ```
